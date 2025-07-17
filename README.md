@@ -410,7 +410,7 @@ gpg --armor --export <fingerprint>
 
 **Finished!**
 
-Don't forget your GPG key fingerprint, as you'll need it for the [setup script](./setup.sh) later
+Don't forget your GPG key fingerprint, as you'll need it for the [setup script](./config.sh) later
 
 </details>
 
