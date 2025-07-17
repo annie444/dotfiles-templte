@@ -13,5 +13,5 @@ This is a template repostitory, so you can easily use this repo to make your own
 ## Setting up a new host
 
 1. The `./bootstrap.sh` script is used for copying the SSH keys an GPG keys to a remote host. You'll want to use this script first before continuing to setup a new host.
-2. The `./install.sh` script is used to install the dotfiles on a new host. This script mainly ensures all the expected files are present and sets the paths to executables that are different from host to host.
+2. The `./install.sh` script is used to install the dotfiles on a new host. This script mainly ensures all the expected files are present and sets the paths to executables that are different from host to host. _Note_: If this script fails with an error like `stowing <something> would cause conflicts`, it means that those dotfiles already exist. You can either run `stow <target> --adopt` or you can delete the conflicting files (e.g., for ssh, it would be `~/.ssh/config`) and then run `stow <target>`.
 3. You'll need to make sure that your shell is sourcing the script `~/.gnupg/gpg.sh` at startup. If you're using `bash` or `zsh` should add the line `source ~/.gnupg/gpg.sh` to your `~/.bashrc` or `~/.zshrc`.
