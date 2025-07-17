@@ -71,7 +71,6 @@ echo -e "${GREEN}SSH keys added successfully.${RESET}"
 
 echo -e "${CYAN}Configuring GPG...${RESET}"
 
-mkdir -p "${HOME}/dotfiles/gpg/.gnupg"
 echo "pinentry-program $(which pinentry-curses)" >>"${HOME}/dotfiles/gpg/.gnupg/gpg-agent.conf"
 
 echo -e "${GREEN}GPG configured successfully.${RESET}"
