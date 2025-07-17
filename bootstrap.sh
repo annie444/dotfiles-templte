@@ -40,7 +40,10 @@ echo -e "${CYAN}Setting up SSH keys...${RESET}"
 # Copy over SSH config
 scp "${HOME}/.ssh/config" "${REMOTE_HOST}":~/.ssh/config
 # Copy over SSH keys
-scp "${HOME}/.ssh/*id_ed25519*" "${REMOTE_HOST}":~/.ssh/
+for key in $(find "${HOME}/.ssh" -maxdepth 1 -type f -name 'id_*' -not -name '*pub'); do
+  check_file "${key}"
+  scp "${key}" "${REMOTE_HOST}":~/.ssh/
+done
 
 echo -e "${GREEN}SSH keys copied successfully.${RESET}"
 
