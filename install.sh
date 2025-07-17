@@ -63,8 +63,6 @@ echo -e "${CYAN}Adding SSH keys...${RESET}"
 check_file "${HOME}/.ssh/github_id_ed25519"
 check_file "${HOME}/.ssh/github_id_ed25519.pub"
 
-ssh-add "${HOME}/.ssh/github_id_ed25519"
-
 echo -e "${GREEN}SSH keys added successfully.${RESET}"
 
 ## Configure paths
