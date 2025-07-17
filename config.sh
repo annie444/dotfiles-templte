@@ -16,12 +16,9 @@ echo -e "${CYAN}Configuring git...${RESET}"
 echo "[user]" >>./git/.gitconfig
 
 read -r -p "Enter your git email: " git_email
-echo -e "  email = \"${git_email}\"" >>./git/.gitconfig
-
 read -r -p "Enter your git name: " git_name
-echo -e "  name = \"${git_name}\"" >>./git/.gitconfig
+read -r -p "Enter your git GPG key fingerprint: " git_signingkey
 
-read -r -p "Enter your git GPG signing key fingerprint: " git_signingkey
-echo -e "  signingkey = ${git_signingkey}" >>./git/.gitconfig
+echo -e "  email = \"${git_email}\"\n  name = \"${git_name}\"\n  signingkey = ${git_signingkey}" >>./git/.gitconfig
 
 echo -e "${GREEN}Git configured successfully.${RESET}"
